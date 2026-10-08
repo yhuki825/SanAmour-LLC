@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--
+================================================================
+合同会社ＳａｎＡｍｏｕｒ ブランドサイト デザイン案（9/26の作風で再構成）
+  コンセプト：「人の熱を、回線へ」
+    事業内容（リアルマーケティング × IT通信事業）から着想。人が顔を合わせる場で生まれる熱と、
+    それを日々の仕事に流し込むITと通信の回線。二つの事業を「熱を、届く信号に変える仕事」として描いています。
+    ・ヒーロー：人の集まりから立ちのぼる温かな粒が、5本の信号線に乗ると、
+      珊瑚色から信号の緑へと色を変えて流れていくCanvas（ポインタで波の振れ幅が変わる）
+    ・右端のスクロールレール：電波の強さを示す5本のバーが、読み進めるごとに1本ずつ立つ
+    ※社名「SanAmour」の語義は使っていません（読み・由来が未確認のため）。
+    ※所在地・地名など土地から着想した要素は採用していません。
+  書体：Shippori Mincho B1 ＋ Zen Kaku Gothic New ＋ Jost ＋ IBM Plex Mono
+  配色：黒鉛の緑 #121A17 ／ 差し色：信号の緑 #9FD97A（添え色：人の熱の珊瑚 #F08A62）
+  デプロイ：Cloudflare Pages（Direct Upload）にこのファイルをそのままアップロード。
+            ビルド不要。外部依存は Google Fonts と Unsplash 画像のみ。
+
+  ■ 公開前の確認事項（チェックリスト）
+  【確認事項】1. 商号はCSVどおり全角「ＳａｎＡｍｏｕｒ」。ロゴ・見出しでは半角「SanAmour」で表記している
+  【確認事項】2. 社名の読み・由来は未確認のため説明を入れていない（「Amour」の語義から着想した表現も避けている）
+  【確認事項】3. キャッチコピー「人の熱を、回線にのせて。」は事業内容から起こした仮案
+  【確認事項】4. リアルマーケティング・IT通信事業の説明文はCSVをもとに膨らませた文案（具体的な手法・取扱商材は未確認）
+  【確認事項】5. 「考え方」「進め方」「大切にしていること」は文案
+  【確認事項】6. 取扱メーカー名・通信キャリア名は載せていない。代理店資格等がある場合は確認のうえ追記
+  【確認事項】7. 実績・取引先はCSVに無いため載せていない
+  【確認事項】8. 通信サービスの販売・取次では電気通信事業法（説明義務・書面交付など）、販促では景品表示法に留意
+  【確認事項】9. 代表者の役職名は「代表社員」と仮置き（合同会社のため）
+  【確認事項】10. 代表メッセージは草案。ご本人の確認・修正を経て公開してください
+  【確認事項】11. レールの電波バーは読み進めた割合を示す演出で、通信品質の数値ではない
+  【確認事項】12. OGP画像・favicon・公開URL
+  画像：Unsplash（フリー素材・仮）
+    photo-1540575467063-178a50c2df87（会場に集まる人たち）
+    photo-1492684223066-81342ee5ff30（紙吹雪が舞うイベント会場）
+    photo-1544197150-b99a580bb7a8（ネットワーク機器と配線）
+    photo-1558494949-ef010cbdcc31（サーバーラック）
+    photo-1551288049-bebda4e38f71（数値を表示した画面）
+    photo-1519389950473-47ba0277781c（ノートPCで作業するチーム）
+    ※旧案の photo-1505373877841（投影画面に地名が読める）、photo-1556740758（店頭の決済端末）は不使用
+================================================================
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>合同会社SanAmour｜リアルマーケティング・IT通信事業</title>
+<meta name="description" content="合同会社SanAmourは、リアルマーケティングを活用した集客支援・販促プロモーションと、IT製品や通信サービスの提案・導入支援を手がける会社です。">
+<meta property="og:title" content="合同会社SanAmour｜リアルマーケティング・IT通信事業">
+<meta property="og:description" content="合同会社SanAmourは、リアルマーケティングを活用した集客支援・販促プロモーションと、IT製品や通信サービスの提案・導入支援を手がける会社です。">
+<meta property="og:type" content="website">
+<!-- 【確認事項】og:url / og:image は公開ドメイン確定後に設定 -->
+<meta name="theme-color" content="#121A17">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121A17'/%3E%3Cpath d='M4 20 C 8 11, 12 11, 16 18 C 20 25, 24 10, 28 14' fill='none' stroke='%239FD97A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Jost:wght@300;400;500&family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#121A17;      /* 黒鉛の緑：機器の筐体 */
+  --base-2:#1A2420;
+  --base-deep:#0D1311;
+  --text:#E9EEE8;
+  --mute:#93A39A;
+  --accent:#9FD97A;    /* 信号の緑 */
+  --signal:#9FD97A;
+  --warmth:#F08A62;    /* 人の熱の珊瑚 */
+  --line:rgba(233,238,232,.13);
+  --paper:#ECEFEA; --ink:#17201C; --ink-line:rgba(23,32,28,.15); --ink-mute:#5C6A62;
+  --header-bg:rgba(18,26,23,.88); --menu-bg:rgba(13,19,17,.97);
+  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --latin:"Jost","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--base);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.95;letter-spacing:.04em;word-break:auto-phrase;text-wrap:pretty;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4,p,figure,ol,ul,dl,dd{margin:0}
+.nw{display:inline-block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--accent);color:var(--base);padding:10px 16px;text-decoration:none;font-weight:700}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1160px,100% - 48px);margin-inline:auto}
+.sec{position:relative;padding:clamp(96px,14vw,180px) 0}
+.sec--alt{background:var(--base-2)}
+.sec--deep{background:var(--base-deep)}
+.sec--paper{background:var(--paper);color:var(--ink);--line:var(--ink-line);--mute:var(--ink-mute)}
+
+/* header */
+.header{position:fixed;inset:0 0 auto 0;z-index:100;padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
+.header.is-scrolled{background:var(--header-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.header__in{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;width:min(1240px,100% - 40px);margin-inline:auto}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.logo svg{width:30px;height:30px;flex:none}
+.logo__txt{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.logo__txt b{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:.12em;white-space:nowrap}
+.logo__txt small{font-family:var(--latin);font-size:11px;letter-spacing:.16em;color:var(--mute);white-space:nowrap}
+.gnav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px}
+.gnav a{position:relative;display:inline-block;padding:6px 0;text-decoration:none;font-size:13px;letter-spacing:.14em}
+.gnav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.gnav a:hover::after,.gnav a:focus-visible::after{transform:scaleX(1)}
+.menu-btn{display:none;background:none;border:0;color:var(--text);width:44px;height:44px;cursor:pointer;position:relative;flex:none}
+.menu-btn span{position:absolute;left:11px;right:11px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.menu-btn span:nth-child(1){top:16px}.menu-btn span:nth-child(2){top:22px}.menu-btn span:nth-child(3){top:28px}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:900px){
+  .header__in{height:64px}
+  .menu-btn{display:block;z-index:120}
+  .gnav{position:fixed;inset:0;background:var(--menu-bg);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;z-index:110}
+  .gnav.is-open{opacity:1;visibility:visible}
+  .gnav ul{flex-direction:column;align-items:center;gap:26px}
+  .gnav a{font-family:var(--serif);font-size:20px}
+}
+
+/* hero shared */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate}
+.hero canvas.full{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1}
+.hero__veil{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.hero-title{font-family:var(--serif);font-weight:600;margin:0}
+.hero-title span{display:block}
+.hero [data-in]{opacity:0;transform:translateY(14px);transition:opacity 1.2s cubic-bezier(.22,.7,.2,1),transform 1.2s cubic-bezier(.22,.7,.2,1)}
+.is-loaded .hero [data-in]{opacity:1;transform:none}
+.is-loaded .hero [data-in="2"]{transition-delay:.4s}
+.is-loaded .hero [data-in="3"]{transition-delay:.85s}
+.is-loaded .hero [data-in="4"]{transition-delay:1.25s}
+.scroll-cue{position:absolute;left:50%;bottom:26px;width:1px;height:54px;background:var(--line);overflow:hidden;z-index:2}
+.scroll-cue::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--text);animation:drop 2.4s ease-in-out infinite}
+@keyframes drop{to{top:100%}}
+
+/* rail shared */
+.rail{position:fixed;z-index:90;pointer-events:none}
+@media (max-width:900px){.rail{display:none}}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity 1.1s cubic-bezier(.22,.7,.2,1),transform 1.1s cubic-bezier(.22,.7,.2,1)}
+.js .reveal.is-in{opacity:1;transform:none}
+.draw-fig{display:block;width:100%;height:auto;overflow:visible}
+.draw-fig .ln{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.45,.05,.2,1) .3s}
+.draw-fig .ln.l2{transition-delay:.9s}.draw-fig .ln.l3{transition-delay:1.5s}.draw-fig .ln.l4{transition-delay:2.1s}
+.draw-fig .ln.sub{stroke:var(--mute);stroke-width:1}
+.draw-fig .dot{fill:var(--accent);opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.3);transition:opacity .8s 1.2s,transform .8s cubic-bezier(.3,1.6,.5,1) 1.2s}
+.draw-fig .lbl{fill:var(--text);font-family:var(--sans);font-size:13px;letter-spacing:.12em;opacity:0;transition:opacity 1s 1.8s}
+.sec--paper .draw-fig .lbl{fill:var(--ink)}
+.draw-fig .lbl.en{font-family:var(--latin);font-style:italic;fill:var(--mute);font-size:12px}
+.draw-fig.is-in .ln{stroke-dashoffset:0}
+.draw-fig.is-in .dot{opacity:1;transform:none}
+.draw-fig.is-in .lbl{opacity:1}
+
+/* section heads */
+.shead{margin-bottom:clamp(40px,6vw,72px)}
+.shead h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3vw,40px);letter-spacing:.12em;line-height:1.55}
+.shead .en{font-family:var(--latin);color:var(--accent);letter-spacing:.08em}
+.shead .sub{margin-top:18px;color:var(--mute);max-width:34em}
+/* variant: JA + EN beside */
+.hs-side .shead .row{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
+.hs-side .shead .en{font-style:italic;font-size:19px}
+/* variant: eyebrow above */
+.hs-eye .shead .en{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:14px}
+.hs-eye .shead .en::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+/* variant: big latin + JA */
+.hs-big .shead .row{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;gap:24px}
+.hs-big .shead .en{order:-1;font-weight:300;font-size:clamp(44px,6.4vw,88px);line-height:.9;letter-spacing:.02em}
+.hs-big .shead h2{font-size:clamp(20px,2.2vw,28px);padding-bottom:8px;border-bottom:1px solid var(--line)}
+@media (max-width:640px){.hs-big .shead .row{grid-template-columns:minmax(0,1fr)}}
+/* variant: sub below */
+.hs-below .shead .en{display:block;margin-top:8px;font-style:italic;font-size:16px}
+
+/* concept grid */
+.concept{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:center}
+.concept__txt p+p{margin-top:1.2em}
+.concept__txt p{max-width:32em}
+.statement{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.75;letter-spacing:.1em;margin-bottom:1.4em}
+@media (max-width:900px){.concept{grid-template-columns:minmax(0,1fr)}}
+
+/* band */
+.band{position:relative;height:clamp(260px,42vw,520px);overflow:hidden;background:linear-gradient(135deg,var(--base-2),var(--base-deep))}
+.band img{position:absolute;left:0;top:-9%;width:100%;height:118%;object-fit:cover;filter:saturate(.72) brightness(.66);will-change:transform}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.45))}
+.band p{position:absolute;left:clamp(24px,6vw,96px);right:24px;bottom:clamp(24px,5vw,56px);z-index:1;font-family:var(--serif);font-size:clamp(19px,2.4vw,30px);letter-spacing:.14em;line-height:1.7;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.4)}
+
+/* business rows */
+.biz{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.biz+.biz{margin-top:clamp(72px,10vw,128px)}
+.biz:nth-of-type(even) .biz__media{order:2}
+.ph{position:relative;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--base-2),var(--base-deep))}
+.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.03);transform:scale(1.05);transition:transform 1.6s cubic-bezier(.22,.7,.2,1)}
+.is-in .ph img,.ph.is-in img{transform:scale(1)}
+.biz:hover .ph img{transform:scale(1.03)}
+.biz__kind{display:inline-block;font-size:13px;letter-spacing:.16em;color:var(--accent);margin-bottom:14px}
+.biz h3{font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.6;letter-spacing:.1em;margin-bottom:18px}
+.biz p{max-width:30em}
+.tags{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:12.5px;letter-spacing:.08em}
+@media (max-width:900px){.biz{grid-template-columns:minmax(0,1fr)}.biz:nth-of-type(even) .biz__media{order:0}}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:clamp(16px,2.4vw,32px);position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;background:var(--line)}
+.steps::after{content:"";position:absolute;left:0;top:11px;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 2.4s cubic-bezier(.6,.1,.2,1)}
+.steps.is-in::after{transform:scaleX(1)}
+.step{position:relative;padding-top:46px}
+.step__dot{position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;border:1px solid var(--mute);background:var(--sbg,var(--base));display:grid;place-items:center}
+.step__dot::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.steps.is-in .step__dot::after{transform:scale(1)}
+.steps.is-in .step:nth-child(2) .step__dot::after{transition-delay:.5s}
+.steps.is-in .step:nth-child(3) .step__dot::after{transition-delay:1s}
+.steps.is-in .step:nth-child(4) .step__dot::after{transition-delay:1.5s}
+.steps.is-in .step:nth-child(5) .step__dot::after{transition-delay:2s}
+.step__no{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.12em}
+.step h3{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.14em;margin:6px 0 10px}
+.step p{font-size:14.5px;color:var(--mute);line-height:1.9}
+.loop-note{margin-top:40px;display:flex;align-items:center;gap:10px;color:var(--mute);font-size:14px;letter-spacing:.1em}
+.loop-note svg{width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:1.4}
+@media (max-width:900px){
+  .steps{grid-template-columns:minmax(0,1fr);gap:0;padding-left:44px}
+  .steps::before,.steps::after{left:11px;right:auto;top:10px;bottom:10px;width:1px;height:auto}
+  .steps::after{transform:scaleY(0);transform-origin:top}
+  .steps.is-in::after{transform:scaleY(1)}
+  .step{padding:0 0 36px}
+  .step__dot{left:-44px}
+}
+
+/* values */
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.value{padding:36px clamp(20px,3vw,40px) 8px;border-right:1px solid var(--line)}
+.value:first-child{padding-left:0}.value:last-child{border-right:0}
+.value h3{font-family:var(--serif);font-weight:600;font-size:clamp(19px,1.9vw,23px);letter-spacing:.12em;line-height:1.6;margin-bottom:14px}
+.value .vk{display:block;font-family:var(--latin);font-style:italic;color:var(--accent);font-size:15px;margin-bottom:10px;letter-spacing:.06em}
+.value p{font-size:15px;color:var(--mute)}
+@media (max-width:900px){.values{grid-template-columns:minmax(0,1fr)}.value{padding:28px 0;border-right:0;border-bottom:1px solid var(--line)}}
+
+/* message */
+.msg{display:flex;flex-direction:row-reverse;gap:clamp(40px,6vw,90px);justify-content:center;align-items:flex-start}
+.msg__title{writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:.2em;line-height:1.7;flex:none}
+.msg__body{writing-mode:vertical-rl;font-family:var(--serif);font-size:16px;line-height:2.3;letter-spacing:.14em;height:30em;max-width:100%;overflow-x:auto;display:flex;flex-direction:column}
+.msg__body p{margin:0 0 0 1.6em}
+.msg__body .first{font-size:1.25em;font-weight:600}
+.msg__sign{margin-top:auto;text-align:end}
+.msg__sign small{display:block;font-size:13px;color:var(--mute);letter-spacing:.2em}
+.msg__sign strong{font-weight:600;font-size:20px;letter-spacing:.3em}
+@media (max-width:900px){
+  .msg{flex-direction:column;gap:32px}
+  .msg__title,.msg__body{writing-mode:horizontal-tb;height:auto}
+  .msg__body{line-height:2.1;letter-spacing:.06em;overflow:visible}
+  .msg__body p{margin:0 0 1.4em}
+  .msg__sign{text-align:right}
+}
+
+/* company */
+.company{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:clamp(40px,7vw,110px);align-items:start}
+.profile{margin:0;border-top:1px solid var(--line)}
+.profile>div{display:grid;grid-template-columns:9em minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.profile dt{color:var(--mute);font-size:14px;letter-spacing:.14em}
+.profile dd{margin:0;overflow-wrap:anywhere}
+.profile dd ul{list-style:none;margin:0;padding:0}
+.profile dd li{position:relative;padding-left:1.2em}
+.profile dd li+li{margin-top:.3em}
+.profile dd li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:6px;background:var(--accent);border-radius:var(--bullet-r,50%)}
+@media (max-width:900px){.company{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.profile>div{grid-template-columns:minmax(0,1fr);gap:4px}}
+
+/* footer */
+.footer{padding:72px 0 calc(40px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--base-deep)}
+.footer__in{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px}
+.footer__tag{font-family:var(--serif);font-size:clamp(16px,1.8vw,22px);letter-spacing:.18em;margin-top:18px}
+.footer nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer nav a{font-size:12.5px;color:var(--mute);text-decoration:none;letter-spacing:.12em}
+.footer nav a:hover{color:var(--text)}
+.copy{margin-top:40px;font-family:var(--latin);font-size:12.5px;color:var(--mute);letter-spacing:.1em}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal,.hero [data-in]{opacity:1;transform:none}
+  .draw-fig .ln{stroke-dashoffset:0}.draw-fig .dot,.draw-fig .lbl{opacity:1;transform:none}
+  .steps::after{transform:none}.step__dot::after{transform:scale(1)}
+  .ph img{transform:none}
+}
+
+/* ---- site ---- */
+
+.hero{background:radial-gradient(90% 70% at 15% 100%,rgba(240,138,98,.16) 0%,transparent 60%),radial-gradient(120% 90% at 85% 10%,var(--base-2) 0%,var(--base) 64%)}
+.hero__veil{background:linear-gradient(180deg,rgba(18,26,23,.55) 0%,transparent 24%,transparent 56%,rgba(18,26,23,.85) 100%),linear-gradient(270deg,rgba(18,26,23,.7) 0%,transparent 30%)}
+.hero__in{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) auto;width:min(1240px,100% - 48px);margin-inline:auto;padding:120px 0 84px}
+.hero-title{grid-column:2;align-self:start;writing-mode:vertical-rl;font-size:clamp(36px,4.4vw,60px);letter-spacing:.22em;line-height:1.7;margin-right:clamp(52px,6vw,104px)}
+.hero-title span:nth-child(2){padding-top:2.4em}
+.hero-title .w{color:var(--warmth)}.hero-title .s{color:var(--signal)}
+.hero-lead{grid-column:1;grid-row:1;align-self:end;max-width:31em}
+.hero-lead .en{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--signal);margin-bottom:14px}
+.hero-lead .en b{color:var(--warmth);font-weight:400}
+.hero-lead p{font-size:15.5px}
+.legend{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:13px;letter-spacing:.1em;color:var(--mute)}
+.legend li{display:flex;align-items:center;gap:10px}
+.legend i{width:26px;height:2px;border-radius:2px}
+.legend .w i{background:var(--warmth)}.legend .s i{background:var(--signal)}
+@media (max-width:900px){
+  .hero__in{grid-template-columns:minmax(0,1fr);padding:110px 0 90px}
+  .hero-title{grid-column:1;writing-mode:horizontal-tb;font-size:clamp(30px,8.4vw,40px);letter-spacing:.1em;margin:0}
+  .hero-title span:nth-child(2){padding-top:0;padding-left:1.2em}
+  .hero-lead{grid-row:2;margin-top:34vh}
+}
+/* rail: signal bars */
+.rail{right:22px;top:50%;transform:translateY(-50%);width:44px;height:220px;display:flex;flex-direction:column;align-items:flex-end;gap:0}
+.rail__ant{width:22px;height:30px;margin:0 2px 14px auto;fill:none;stroke:var(--mute);stroke-width:1.3;transition:stroke .4s}
+.rail.is-full .rail__ant{stroke:var(--signal);filter:drop-shadow(0 0 6px rgba(159,217,122,.7))}
+.rail__bars{display:flex;flex-direction:column-reverse;gap:7px;align-items:flex-end}
+.rail__bars i{display:block;height:6px;border-radius:1px;background:var(--line);transition:background .4s,box-shadow .4s}
+.rail__bars i.is-on{background:var(--signal);box-shadow:0 0 8px rgba(159,217,122,.5)}
+.rail__read{margin-top:16px;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:10.5px;color:var(--mute);letter-spacing:.06em;white-space:nowrap}
+@media (max-width:900px){.rail{display:none}}
+/* concept figure */
+.merge .warm{stroke:var(--warmth)}
+.merge .pk{fill:var(--signal);opacity:0}
+.merge.is-in .pk{animation:pk 2.6s linear 3s infinite}
+.merge.is-in .pk.p2{animation-delay:3.9s}.merge.is-in .pk.p3{animation-delay:4.8s}
+@keyframes pk{0%{opacity:0;transform:translateX(0)}10%{opacity:1}90%{opacity:1}100%{opacity:0;transform:translateX(170px)}}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);margin-top:56px;border-top:1px solid var(--line)}
+.duo div{padding:26px 28px 0 0}
+.duo div+div{padding-left:28px;border-left:1px solid var(--line)}
+.duo b{display:block;font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;margin-bottom:8px}
+.duo .w b{color:var(--warmth)}.duo .s b{color:var(--signal)}
+.duo h3{font-family:var(--serif);font-size:20px;letter-spacing:.12em;margin-bottom:8px}
+.duo p{font-size:15px;color:var(--mute)}
+@media (max-width:640px){.duo{grid-template-columns:minmax(0,1fr)}.duo div+div{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:22px}}
+.ph{aspect-ratio:16/11;border-radius:2px 60px 2px 2px}
+.ph.is-fallback{background:repeating-linear-gradient(0deg,rgba(159,217,122,.12) 0 1px,transparent 1px 22px),linear-gradient(135deg,var(--base-2),var(--base))}
+.biz__kind{font-family:var(--mono);font-size:12px;letter-spacing:.16em}
+.biz.w .biz__kind{color:var(--warmth)}
+.biz.w .tags li{border-color:rgba(240,138,98,.4)}
+.biz.s .tags li{border-color:rgba(159,217,122,.4)}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;margin-top:6px}
+.pair .ph{aspect-ratio:4/3;border-radius:2px}
+.profile dd li::before{border-radius:1px;width:8px;height:3px;top:.95em}
+.sec--paper .shead .en{color:#3F7D2A}
+.sec--paper .step__no{color:#3F7D2A}
+.sec--paper .loop-note svg{stroke:#3F7D2A}
+
+</style>
+</head>
+<body class="">
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="logo" href="#top" aria-label="合同会社ＳａｎＡｍｏｕｒ トップへ"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 20 C 7 12, 11 12, 15 18" fill="none" stroke="#F08A62" stroke-width="1.8" stroke-linecap="round"/><path d="M15 18 C 19 24, 23 10, 29 14" fill="none" stroke="#9FD97A" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="18" r="2.2" fill="#E9EEE8"/></svg><span class="logo__txt"><b>SanAmour</b><small lang="en">Real marketing &amp; IT</small></span></a>
+    <!-- 【確認事項】ロゴは仮のワードマーク（半角表記） -->
+    <button class="menu-btn" id="menuBtn" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー"><ul><li><a href="#about">考え方</a></li><li><a href="#business">事業内容</a></li><li><a href="#flow">進め方</a></li><li><a href="#values">大切にしていること</a></li><li><a href="#message">メッセージ</a></li><li><a href="#company">会社概要</a></li></ul></nav>
+  </div>
+</header>
+<div class="rail" id="rail" aria-hidden="true">
+  <svg class="rail__ant" viewBox="0 0 22 30"><path d="M11 12 V29 M6 29 H16"/><path d="M6.5 7.5 a6.5 6.5 0 0 0 0 9 M15.5 7.5 a6.5 6.5 0 0 1 0 9 M3 4 a11 11 0 0 0 0 16 M19 4 a11 11 0 0 1 0 16"/><circle cx="11" cy="12" r="2"/></svg>
+  <div class="rail__bars" id="railBars"><i style="width:10px"></i><i style="width:17px"></i><i style="width:24px"></i><i style="width:31px"></i><i style="width:38px"></i></div>
+  <span class="rail__read" id="railRead">LINK 0/5</span>
+</div>
+<main id="main">
+
+<section class="hero" id="top" aria-label="メインビジュアル">
+  <canvas id="heroCanvas" class="full" aria-hidden="true"></canvas>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__in">
+    <!-- 【確認事項】キャッチコピーは事業内容から起こした仮案 -->
+    <h1 class="hero-title" aria-label="人の熱を、回線にのせて。"><span data-in="1">人の<b class="w" style="font-weight:inherit">熱</b>を、</span><span data-in="2"><b class="s" style="font-weight:inherit">回線</b>にのせて。</span></h1>
+    <div class="hero-lead" data-in="3">
+      <span class="en" lang="en"><b>REAL MARKETING</b> × IT &amp; TELECOM</span>
+      <p>合同会社SanAmourは、<span class="nw">リアルマーケティングを活用した</span><span class="nw">集客支援・販促プロモーションと、</span><span class="nw">IT製品や通信サービスの</span><span class="nw">提案・導入支援を通じて、</span><span class="nw">企業の成長と業務効率化を支える会社です。</span></p>
+      <ul class="legend" aria-label="二つの事業"><li class="w"><i></i>リアルマーケティング</li><li class="s"><i></i>IT通信事業</li></ul>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</section>
+
+<section class="sec hs-eye" id="about" data-rail aria-labelledby="aboutTitle">
+  <div class="wrap">
+    <div class="concept">
+      <div class="concept__txt reveal">
+        <div class="shead reveal"><div class="row"><h2 id="aboutTitle">顔を合わせて伝えることと、<br>仕組みで支えること。</h2><span class="en" lang="en">Our approach</span></div></div>
+        <!-- 【確認事項】文章は文案 -->
+        <p>人と人が直接出会う場で生まれる熱は、画面越しではなかなか生まれません。一方で、日々の仕事を軽くするのは、正しく選ばれたITと通信の仕組みです。</p>
+        <p>私たちは、リアルの場で人を集め、魅力を伝える力と、ITで業務を効率化する力の両方を持つ会社として、お客さまの事業を前と後ろから支えます。生まれた熱を、続いていく仕組みへ。その橋渡しが私たちの仕事です。</p>
+      </div>
+      <figure class="reveal">
+        <svg class="draw-fig merge" viewBox="0 0 440 300" role="img" aria-label="人の熱をあらわす波と、ITの信号線が一本に合わさって流れていく図">
+          <path class="ln warm" pathLength="1" d="M20 70 C 60 30, 90 110, 130 70 S 190 40, 220 150"/>
+          <path class="ln l2" pathLength="1" d="M20 230 L 80 230 L 80 200 L 140 200 L 140 230 L 220 150"/>
+          <path class="ln l3" pathLength="1" d="M220 150 H 420"/>
+          <circle class="dot" cx="220" cy="150" r="6" style="fill:var(--text)"/>
+          <rect class="pk" x="226" y="147" width="16" height="6" rx="1"/><rect class="pk p2" x="226" y="147" width="16" height="6" rx="1"/><rect class="pk p3" x="226" y="147" width="16" height="6" rx="1"/>
+          <text class="lbl" x="20" y="34">人の熱（リアル）</text><text class="lbl" x="20" y="264">仕組み（IT・通信）</text><text class="lbl" x="300" y="130">事業の力に</text>
+          <text class="lbl en" x="300" y="180">one signal</text>
+        </svg>
+      </figure>
+    </div>
+    <div class="duo reveal">
+      <div class="w"><b>01 / REAL</b><h3>人を集め、伝える</h3><p>リアルマーケティングで生まれたお客さまとの接点。そこで得た声や手応えは、次の打ち手を考える大切な材料になります。</p></div>
+      <div class="s"><b>02 / IT</b><h3>仕組みで、軽くする</h3><p>ITと通信の仕組みが整えば、日々の手間が減り、人にしかできない仕事に時間を使えるようになります。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=2000&q=75" alt="" loading="lazy" id="bandImg" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
+  <!-- 画像：Unsplash（仮）差し替え推奨 -->
+  <p>その場の熱を、その場かぎりにしない。</p>
+</div>
+
+<section class="sec sec--alt hs-eye" id="business" data-rail aria-labelledby="bizTitle">
+  <div class="wrap">
+    <div class="shead reveal"><div class="row"><h2 id="bizTitle">事業内容</h2><span class="en" lang="en">Business</span></div><p class="sub">売上を伸ばす力と、仕事を軽くする力。どちらか一方ではなく、両方をひとつの窓口でご相談いただけます。</p></div>
+    <!-- 【確認事項】各事業の説明文・項目はCSVをもとにした文案 -->
+    <article class="biz w reveal">
+      <div class="biz__media"><div class="ph"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=75" alt="会場に集まり前方のステージを見る人たち" loading="lazy"  onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div>
+        <div class="pair"><div class="ph"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=75" alt="ノートパソコンを並べて販促の準備を進めるチーム" loading="lazy"  onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div><div class="ph"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=75" alt="紙吹雪が舞うイベント会場" loading="lazy"  onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div></div></div>
+      <div><span class="biz__kind" lang="en">01 / REAL MARKETING</span><h3>広告マーケティング業</h3>
+        <p>リアルマーケティングを活用した集客支援と販促プロモーションを提供します。実際にお客さまと出会う場を活かし、商品やサービスの魅力を、熱が伝わるかたちで直接届けます。</p>
+        <ul class="tags"><li>リアルの場を活かした集客支援</li><li>販促プロモーションの企画・実施</li><li>店頭やイベントでの伝え方づくり</li></ul></div>
+    </article>
+    <article class="biz s reveal">
+      <div class="biz__media"><div class="ph"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=75" alt="配線が整えられたサーバーラック" loading="lazy"  onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div>
+        <div class="pair"><div class="ph"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=75" alt="ネットワーク機器に差し込まれた通信ケーブル" loading="lazy"  onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div><div class="ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75" alt="業務の数値を表示した画面" loading="lazy"  onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div></div></div>
+      <div><span class="biz__kind" lang="en">02 / IT &amp; TELECOM</span><h3>IT通信事業</h3>
+        <p>IT製品や通信サービスの提案・導入支援を通じて、業務の効率化を支援します。現場の使い方を伺い、ちょうどよい製品とサービスを選ぶところからお手伝いします。</p>
+        <ul class="tags"><li>IT製品のご提案</li><li>通信サービスのご提案</li><li>導入の支援と業務効率化</li></ul></div>
+    </article>
+  </div>
+</section>
+
+<section class="sec sec--paper hs-eye" id="flow" data-rail aria-labelledby="flowTitle">
+  <div class="wrap">
+    <div class="shead reveal"><div class="row"><h2 id="flowTitle">進め方</h2><span class="en" lang="en">Flow</span></div><p class="sub">熱を拾い、信号に変え、届いたかを確かめる。その繰り返しです。</p></div>
+    <!-- 【確認事項】進め方は一般的な流れの例（順序のある工程のため番号を使用） -->
+    <ol class="steps" style="--n:4;--sbg:var(--paper)">
+      <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">01</span><h3>聴く</h3><p>集客や業務の現状、困りごとを伺います。</p></li>
+      <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">02</span><h3>組む</h3><p>販促の企画やIT・通信の選択肢をご提案します。</p></li>
+      <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">03</span><h3>つなぐ</h3><p>プロモーションの実施や製品の導入を進めます。</p></li>
+      <li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">04</span><h3>確かめる</h3><p>結果や使い心地を確かめ、改善につなげます。</p></li>
+    </ol>
+    <p class="loop-note reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg>確かめた声を、また次の「聴く」へ。</p>
+  </div>
+</section>
+
+<section class="sec hs-eye" id="values" data-rail aria-labelledby="valTitle">
+  <div class="wrap">
+    <div class="shead reveal"><div class="row"><h2 id="valTitle">大切にしていること</h2><span class="en" lang="en">Principles</span></div></div>
+    <!-- 【確認事項】3項目は文案 -->
+    <div class="values reveal">
+      <div class="value"><span class="vk" lang="en">face to face</span><h3>会って、<br>確かめる</h3><p>画面の数字だけで判断せず、現場に足を運び、人の反応を自分の目で確かめます。</p></div>
+      <div class="value"><span class="vk" lang="en">just right</span><h3>ちょうどいい<br>仕組みを選ぶ</h3><p>多機能であることより、現場で使い続けられること。必要な分だけを、無理なく導入します。</p></div>
+      <div class="value"><span class="vk" lang="en">one window</span><h3>ひとつの窓口で<br>つなぐ</h3><p>集客とIT、別々に相談する手間をなくし、二つをつなげて考えられる体制を大切にします。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--deep" id="message" data-rail aria-labelledby="msgTitle">
+  <div class="wrap">
+    <!-- 【確認事項】代表メッセージは草案です。ご本人の確認・修正を経て公開してください -->
+    <div class="msg reveal">
+      <h2 class="msg__title" id="msgTitle">熱があるうちに、<br>つなぐ。</h2>
+      <div class="msg__body">
+        <p class="first">人が集まる場には、画面越しでは生まれない熱があります。</p>
+        <p>けれど、その熱は放っておくと冷めてしまいます。集まった声を記録し、届け、次の仕事に活かす仕組みがあってはじめて、熱は事業の力になります。</p>
+        <p>私たちは、リアルの場で人を集める仕事と、ITと通信で仕事を軽くする仕事の両方を手がけています。どちらも、人の力をもっと生かすための仕事だと考えています。</p>
+        <p>会って話し、ちょうどいい仕組みを選び、結果を一緒に確かめる。その積み重ねで、お客さまの事業を前と後ろから支えていきます。</p>
+        <p class="msg__sign"><small>代表社員</small><strong>伊藤丈未</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec hs-eye" id="company" data-rail aria-labelledby="coTitle">
+  <div class="wrap company">
+    <div class="shead reveal"><div class="row"><h2 id="coTitle">会社概要</h2><span class="en" lang="en">Company</span></div></div>
+    <dl class="profile reveal">
+      <div><dt>商号</dt><dd>合同会社SanAmour</dd></div>
+      <div><dt>代表者</dt><dd>代表社員　伊藤丈未<!-- 【確認事項】役職名は仮置き --></dd></div>
+      <div><dt>所在地</dt><dd>鹿児島県姶良市加治木町木田1015-7</dd></div>
+      <div><dt>事業内容</dt><dd><ul><li>広告マーケティング業（リアルマーケティングを活用した集客支援・販促プロモーションを提供）</li><li>IT通信事業（IT製品や通信サービスの提案・導入支援を通じて業務効率化を支援）</li></ul></dd></div>
+      <!-- 未確認のため非表示
+      <div><dt>設立</dt><dd>----年--月</dd></div>
+      <div><dt>資本金</dt><dd>---万円</dd></div>
+      <div><dt>代理店資格等</dt><dd>（確認後に追記）</dd></div>
+      -->
+    </dl>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div>
+        <a class="logo" href="#top" aria-label="合同会社SanAmour トップへ"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 20 C 7 12, 11 12, 15 18" fill="none" stroke="#F08A62" stroke-width="1.8" stroke-linecap="round"/><path d="M15 18 C 19 24, 23 10, 29 14" fill="none" stroke="#9FD97A" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="18" r="2.2" fill="#E9EEE8"/></svg><span class="logo__txt"><b>SanAmour</b><small lang="en">Real marketing &amp; IT</small></span></a>
+        <p class="footer__tag">人の熱を、回線にのせて。</p>
+      </div>
+      <nav aria-label="フッターメニュー"><ul><li><a href="#about">考え方</a></li><li><a href="#business">事業内容</a></li><li><a href="#flow">進め方</a></li><li><a href="#values">大切にしていること</a></li><li><a href="#message">メッセージ</a></li><li><a href="#company">会社概要</a></li></ul></nav>
+    </div>
+    <p class="copy">&copy; <span id="year">2026</span> 合同会社SanAmour</p>
+  </div>
+</footer>
+<script>
+
+document.documentElement.classList.add('js');
+(function(){
+  'use strict';
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.__reduce = reduce;
+  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.body.classList.add('is-loaded'); }); });
+  /* header */
+  var header = document.getElementById('header'), ticking = false;
+  var railHooks = window.__railHooks = window.__railHooks || [];
+  var sections = Array.prototype.slice.call(document.querySelectorAll('[data-rail]'));
+  window.__railSections = sections;
+  function progress(){ var max = document.documentElement.scrollHeight - innerHeight; return max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0; }
+  function secPos(){ var max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    return sections.map(function(s){ return Math.min(1, Math.max(0, (s.getBoundingClientRect().top + scrollY - innerHeight * .3) / max)); }); }
+  window.__secPos = secPos;
+  function onScroll(){
+    header.classList.toggle('is-scrolled', scrollY > 40);
+    var p = progress(); railHooks.forEach(function(f){ f(p); });
+    var b = document.getElementById('bandImg');
+    if (b && !reduce){ var r = b.parentElement.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < innerHeight){ var k = (r.top + r.height/2 - innerHeight/2) / innerHeight; b.style.transform = 'translateY(' + (k * -40).toFixed(1) + 'px)'; } }
+    ticking = false;
+  }
+  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  window.__onScroll = onScroll;
+  addEventListener('load', function(){ (window.__railLayout || function(){})(); onScroll(); });
+  addEventListener('resize', function(){ (window.__railLayout || function(){})(); onScroll(); });
+  /* menu */
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('gnav');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    nav.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function(){ setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a') && nav.classList.contains('is-open')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('is-open')){ setMenu(false); btn.focus(); } });
+  matchMedia('(min-width:901px)').addEventListener('change', function(m){ if (m.matches) setMenu(false); });
+  /* reveal */
+  var targets = document.querySelectorAll('.reveal, .draw-fig, .steps, .ph');
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){
+      if (!en.isIntersecting) return; en.target.classList.add('is-in'); io.unobserve(en.target);
+      if (en.target.__onIn) en.target.__onIn();
+    }); }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+    targets.forEach(function(t){ io.observe(t); });
+  } else { targets.forEach(function(t){ t.classList.add('is-in'); }); }
+  if (reduce) document.querySelectorAll('.traveler').forEach(function(n){ n.remove(); });
+})();
+/* canvas boilerplate: heroCanvas(canvas, {build:fn(W,H), draw:fn(t,W,H,ctx), still:fn?}) */
+function heroCanvas(cv, o){
+  'use strict';
+  if (!cv || !cv.getContext) return;
+  var reduce = window.__reduce, ctx = cv.getContext('2d'), W = 0, H = 0, dpr = 1, running = false, visible = true, raf = 0, t0 = performance.now();
+  var api = {ctx:ctx, W:0, H:0, mx:.5, my:.5, pointer:false};
+  function resize(){ dpr = Math.min(window.devicePixelRatio || 1, 2); W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); api.W = W; api.H = H; o.build(api); }
+  function loop(now){ if (!running) return; o.draw((now - t0)/1000, api); raf = requestAnimationFrame(loop); }
+  function start(){ if (running || reduce || !visible || document.hidden) return; running = true; raf = requestAnimationFrame(loop); }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+  function still(){ (o.still || function(a){ o.draw(99, a); })(api); }
+  api.still = still; api.restart = function(){ t0 = performance.now(); };
+  resize(); if (reduce) still(); else start();
+  var lastW = W, rt; addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ var w = cv.clientWidth; resize(); if (w !== lastW && o.onWidth) o.onWidth(api); lastW = w; if (!running) still(); }, 150); });
+  if (!reduce) cv.parentElement.addEventListener('pointermove', function(e){ var r = cv.getBoundingClientRect(); api.mx = (e.clientX - r.left)/r.width; api.my = (e.clientY - r.top)/r.height; api.pointer = true; }, {passive:true});
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(en){ visible = en[0].isIntersecting; visible ? start() : stop(); }).observe(cv);
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  return api;
+}
+
+
+(function(){
+  var reduce = window.__reduce;
+  /* ---- rail: signal bars (one bar per fifth of the page) ---- */
+  var rail = document.getElementById('rail'), bars = document.querySelectorAll('#railBars i'), read = document.getElementById('railRead');
+  window.__railHooks.push(function(p){
+    var n = Math.min(5, Math.floor(p * 5 + .02 + (p > .995 ? 1 : 0)));
+    bars.forEach(function(b, i){ b.classList.toggle('is-on', i < n); });
+    read.textContent = 'LINK ' + n + '/5';
+    rail.classList.toggle('is-full', n >= 5);
+  });
+  window.__onScroll();
+
+  /* ---- hero canvas: warm crowd -> signal lines ---- */
+  var W2 = [240,138,98], S2 = [159,217,122];
+  function mix(t){ return Math.round(W2[0] + (S2[0]-W2[0])*t) + ',' + Math.round(W2[1] + (S2[1]-W2[1])*t) + ',' + Math.round(W2[2] + (S2[2]-W2[2])*t); }
+  var lines = [], ps = [], crowd = [], NL = 5, amp = 10;
+  function lineY(a, i, x, t){ var b = lines[i]; return b.y + Math.sin(x / b.len + t * b.sp + b.ph) * (amp + b.a); }
+  function spawn(p, a, fresh){
+    var W = a.W, H = a.H, mob = W < 760;
+    p.sx = W * (.03 + Math.random() * (mob ? .9 : .42)); p.sy = H * (.9 + Math.random() * .08);
+    p.li = Math.floor(Math.random() * NL); p.ex = W * (mob ? .06 : .1) + Math.random() * W * .06;
+    p.k = fresh ? Math.random() : 0; p.dur = 2.6 + Math.random() * 2; p.x = 0; p.v = 90 + Math.random() * 120; p.mode = 0; p.wob = Math.random() * 6.28;
+  }
+  function build(a){
+    var W = a.W, H = a.H, mob = W < 760; lines = []; ps = []; crowd = [];
+    for (var i = 0; i < NL; i++) lines.push({y: H * ((mob ? .4 : .22) + i * (mob ? .05 : .07)), len: 70 + i * 22, sp: .8 + i * .17, ph: i * 1.3, a: i * 2});
+    var n = mob ? 70 : 140;
+    for (var j = 0; j < n; j++){ var p = {}; spawn(p, a, true); if (Math.random() < .55){ p.mode = 1; p.x = p.ex + Math.random() * (W - p.ex); } ps.push(p); }
+    var cn = mob ? 24 : 46; for (var c = 0; c < cn; c++) crowd.push({x: W * (.03 + Math.random() * (mob ? .94 : .44)), y: H * (.9 + Math.random() * .08), ph: Math.random() * 6.28});
+  }
+  var last = 0;
+  function frame(t, a, dt){
+    var ctx = a.ctx, W = a.W, H = a.H;
+    amp += ((a.pointer ? 6 + (1 - a.my) * 22 : 10) - amp) * .04;
+    ctx.clearRect(0, 0, W, H);
+    /* signal lines */
+    for (var i = 0; i < NL; i++){
+      var ex = W * .1, g = ctx.createLinearGradient(ex, 0, W, 0); g.addColorStop(0, 'rgba(' + mix(.2) + ',.05)'); g.addColorStop(.3, 'rgba(159,217,122,.22)'); g.addColorStop(1, 'rgba(159,217,122,.08)');
+      ctx.strokeStyle = g; ctx.lineWidth = 1; ctx.beginPath();
+      for (var x = ex; x <= W; x += 8){ var y = lineY(a, i, x, t); x === ex ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } ctx.stroke();
+    }
+    /* crowd */
+    crowd.forEach(function(c){ var al = .35 + .3 * Math.sin(t * 1.6 + c.ph); ctx.fillStyle = 'rgba(240,138,98,' + al + ')'; ctx.beginPath(); ctx.arc(c.x, c.y, 2.2, 0, 6.283); ctx.fill(); });
+    /* particles */
+    ps.forEach(function(p){
+      if (p.mode === 0){
+        p.k += dt / p.dur; if (p.k >= 1){ p.mode = 1; p.x = p.ex; }
+        var k = Math.min(1, p.k), e = k * k * (3 - 2 * k), ty = lineY(a, p.li, p.ex, t);
+        var x = p.sx + (p.ex - p.sx) * e + Math.sin(t * 2 + p.wob) * 10 * (1 - e), y = p.sy + (ty - p.sy) * (1 - Math.pow(1 - k, 2));
+        ctx.fillStyle = 'rgba(240,138,98,' + (.25 + .55 * k) + ')'; ctx.beginPath(); ctx.arc(x, y, 1.6 + k, 0, 6.283); ctx.fill();
+      } else {
+        p.x += p.v * dt; if (p.x > W + 20){ spawn(p, a, false); return; }
+        var u = Math.min(1, (p.x - p.ex) / (W * .22)), y2 = lineY(a, p.li, p.x, t), c = mix(u);
+        ctx.fillStyle = 'rgba(' + c + ',' + (.9 - .25 * (p.x / W)) + ')'; ctx.fillRect(p.x - 6 - u * 6, y2 - 1.2, 8 + u * 8, 2.4);
+        if (u >= 1){ ctx.fillStyle = 'rgba(159,217,122,.12)'; ctx.fillRect(p.x - 22, y2 - 4, 30, 8); }
+      }
+    });
+  }
+  function draw(t, a){ var dt = Math.min(.05, t - last); last = t; frame(t, a, dt); }
+  function still(a){ frame(4, a, 0); }
+  heroCanvas(document.getElementById('heroCanvas'), {build: build, draw: draw, still: still});
+})();
+
+</script>
+</body>
+</html>
